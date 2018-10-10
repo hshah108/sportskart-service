@@ -7,18 +7,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Getter
 @Setter
 @AllArgsConstructor
-//@Table(name="CATEGORY")
-@Document
+@ToString
+@Document(collection="category")
 public class Category implements Serializable{
-
-	Integer categoryId;
-	String categoryName;
-	String categoryGroup;
 	
-	
+	String categoryId;
+	String code;
+	String displayText;
 }
