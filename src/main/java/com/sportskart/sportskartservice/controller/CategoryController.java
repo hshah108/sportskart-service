@@ -17,6 +17,7 @@ public class CategoryController {
 	
 	@GetMapping("/categories")
 	public List<Category> getAllCategories(){
+		System.out.println("Hello World");
 		return categoryService.getAllCategories();
 	}
 	
