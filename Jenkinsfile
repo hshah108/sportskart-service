@@ -3,7 +3,8 @@ node{
 		echo 'Building project'
 		steps {
 			withMaven(maven : 'Maven 3.3.9'){
-			sh 'mvn clean compile'
+				sh 'mvn clean compile'
+			}
 		}
 	}
 	stage('Test') {
@@ -13,7 +14,8 @@ node{
 		echo 'Deploying the application'
 		steps {
 			withMaven(maven : 'Maven 3.3.9'){
-			sh 'mvn deploy'
+				sh 'mvn deploy'
+			}
 		}
 	}
 	
