@@ -15,4 +15,8 @@ node{
 		echo 'Deploying the application'
 		sh 'mvn install'
 	}
+	stage('Run an application') {
+		echo 'Running an application..'
+		sh 'java -jar sportskart-service-0.0.1-SNAPSHOT.jar'
+	}
 }
