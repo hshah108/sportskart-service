@@ -6,7 +6,11 @@ node{
 	stage('compile') {
 		echo 'Compile the project..'
 		def mvnHome = tool 'Maven 3.3.9'
-		sh 'mvn clean package'
+		def mvnCMD = "${mvnHome}/bin/mvn"
+		sh "${mvnCMD} clean package"
+	}
+	stage( 'Build Docker Image') {
+		sh 'docker build -t hshah108/sportskart-service:1.0.0 .'
 	}
 	stage('Test') {
 		echo 'Running test cases'
