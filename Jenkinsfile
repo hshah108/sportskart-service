@@ -12,15 +12,14 @@ node{
 	stage( 'Build Docker Image') {
 		sh 'docker build -t hshah108/sportskart-service:1.0.0 .'
 	}
-	stage('Test') {
-		echo 'Running test cases'
+	stage( 'Push Docker Image') {
+	    withCredentials([string(credentialsId: 'DockerHubPwd', variable: 'DockerHubPwd')]) {
+			sh "docker login -u hardikshah78 -p ${DockerHubPwd}"
+		}
+	    
+		sh 'docker push hshah108/sportskart-service:1.0.0'
 	}
-	stage('Deploy') {
-		echo 'Deploying the application'
-		sh 'mvn install'
-	}
-	stage('Run an application') {
-		echo 'Running an application..'
-		sh 'java -jar sportskart-service-0.0.1-SNAPSHOT.jar'
+	stage(' Run container') {
+		sh 'docker run -p 8080:8080 -d --name sportskart-service hshah108/sportskart-service:1.0.0'
 	}
 }
