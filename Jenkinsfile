@@ -17,7 +17,7 @@ node{
 			sh "sudo docker login -u hardikshah78 -p navkar68"
 		}
 	    
-		sh 'sudo docker push hshah108/sportskart-service:1.0.0'
+		sh 'sudo docker push hardikshah78/sportskart:1.0.0'
 	}
 	stage(' Run container') {
 		sh 'sudo docker run -p 8080:8080 -d --name sportskart-service hshah108/sportskart-service:1.0.0'
