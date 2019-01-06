@@ -14,7 +14,7 @@ node{
 	}
 	stage( 'Push Docker Image') {
 	    withCredentials([string(credentialsId: 'DockerHubPwd', variable: 'DockerHubPwd')]) {
-			sh "docker login -u hardikshah78 -p navkar78"
+			sh "sudo docker login -u hardikshah78 -p navkar78"
 		}
 	    
 		sh 'docker push hshah108/sportskart-service:1.0.0'
