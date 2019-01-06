@@ -10,7 +10,7 @@ node{
 		sh "${mvnCMD} clean package"
 	}
 	stage( 'Build Docker Image') {
-		sh 'docker build -t hshah108/sportskart-service:1.0.0 .'
+		sh 'sudo docker build -t hshah108/sportskart-service:1.0.0 .'
 	}
 	stage( 'Push Docker Image') {
 	    withCredentials([string(credentialsId: 'DockerHubPwd', variable: 'DockerHubPwd')]) {

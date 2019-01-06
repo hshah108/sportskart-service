@@ -1,4 +1,11 @@
 db.category.drop();
 db.createCollection("category");
-db.category.insert(categoryId: "1", itemCode: "cricket", displayText: "Cricket");
-db.category.insert(categoryId: "2", itemCode: "football", displayText: "Football");
+db.category.insert({categoryId: "1", code: "indoor", displayText: "Indoor Games"});
+db.category.insert({categoryId: "2", code: "outdoor", displayText: "Outdoor Games"});
+db.category.insert({categoryId: "3", code: "2players", displayText: "Two Player Games"});
+db.category.insert({categoryId: "4", code: "multiplayers", displayText: "Multi Player Games"});
+db.category.insert({categoryId: "5", code: "ballgames", displayText: "Ball Games"});
+db.category.insert({categoryId: "6", code: "mindgames", displayText: "Mind Games"});
+db.category.insert({categoryId: "7", code: "physicalgames", displayText: "Physical Games"});
+db.category.insert({categoryId: "8", code: "watergames", displayText: "Water Games"});
+db.category.insert({categoryId: "9", code: "racinggames", displayText: "Racing Games"});
